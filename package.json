@@ -1,0 +1,20 @@
+{
+  "name": "pocketbase-webauthn-server",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.11.3",
+    "@simplewebauthn/server": "^10.0.0",
+    "hono": "^4.4.6",
+    "pocketbase": "^0.21.3"
+  },
+  "devDependencies": {
+    "@simplewebauthn/types": "^10.0.0",
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.5"
+  },
+  "type": "module"
+}
