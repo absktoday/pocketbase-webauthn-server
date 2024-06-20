@@ -7,5 +7,3 @@ services:
       - "9300:3000" # Maps port 8080 on the host to port 3000 in the container
     environment:
       - NODE_ENV=production # or production, depending on your environment
-    env_file:
-      - .env
