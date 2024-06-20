@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@heyputer/kv.js':
+        specifier: ^0.1.6
+        version: 0.1.6
       '@hono/node-server':
         specifier: ^1.11.3
         version: 1.11.3
       '@simplewebauthn/server':
         specifier: ^10.0.0
         version: 10.0.0
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       hono:
         specifier: ^4.4.6
         version: 4.4.6
@@ -177,6 +183,9 @@ packages:
   '@hexagon/base64@1.1.28':
     resolution: {integrity: sha512-lhqDEAvWixy3bZ+UOYbPwUbBkwBq5C1LAJ/xPC8Oi+lL54oyakv/npbA0aU2hgCsx/1NUd4IBvV03+aUBWxerw==}
 
+  '@heyputer/kv.js@0.1.6':
+    resolution: {integrity: sha512-p/aYYHVG6wp/z33rfq2bmc7KgfBP6pE7urnQcnAm8xTN3+U0i2hItXH7bBTJOgsmjqk59I1YUOzcjOTlLrZ26w==}
+
   '@hono/node-server@1.11.3':
     resolution: {integrity: sha512-mFg3qlKkDtMWSalX5Gyh6Zd3MXay0biGobFlyJ49i6R1smBBS1CYkNZbvwLlw+4sSrHO4ZiH7kj4TcLpl2Jr3g==}
     engines: {node: '>=18.14.1'}
@@ -213,8 +222,18 @@ packages:
     resolution: {integrity: sha512-FVnvrKJwpt9LP2lAMl8qZswRNm3T4q9CON+bxldk2iwk3FFpuwhx2FfinyitizWHsVYyaY+y5JzDR0rCMV5yTQ==}
     engines: {node: '>=12.0.0'}
 
+  balanced-match@1.0.2:
+    resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+
+  brace-expansion@2.0.1:
+    resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+
   cross-fetch@4.0.0:
     resolution: {integrity: sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==}
+
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
 
   esbuild@0.21.5:
     resolution: {integrity: sha512-mg3OPMV4hXywwpoDxu3Qda5xCKQi+vCTZq8S9J/EpkhB2HzKXq4SNFZE3+NK93JYxc8VMSep+lOUSC/RVKaBqw==}
@@ -236,6 +255,10 @@ packages:
   ipaddr.js@2.2.0:
     resolution: {integrity: sha512-Ag3wB2o37wslZS19hZqorUnrnzSkpOVy+IiiDEiTqNubEYpYuHWIf6K4psgN2ZWKExS4xhVCrRVfb/wfW8fWJA==}
     engines: {node: '>= 10'}
+
+  minimatch@9.0.4:
+    resolution: {integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==}
+    engines: {node: '>=16 || 14 >=14.17'}
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -357,6 +380,10 @@ snapshots:
 
   '@hexagon/base64@1.1.28': {}
 
+  '@heyputer/kv.js@0.1.6':
+    dependencies:
+      minimatch: 9.0.4
+
   '@hono/node-server@1.11.3': {}
 
   '@levischuck/tiny-cbor@0.2.2': {}
@@ -421,11 +448,19 @@ snapshots:
       pvutils: 1.1.3
       tslib: 2.6.3
 
+  balanced-match@1.0.2: {}
+
+  brace-expansion@2.0.1:
+    dependencies:
+      balanced-match: 1.0.2
+
   cross-fetch@4.0.0:
     dependencies:
       node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
+
+  dotenv@16.4.5: {}
 
   esbuild@0.21.5:
     optionalDependencies:
@@ -463,6 +498,10 @@ snapshots:
   hono@4.4.6: {}
 
   ipaddr.js@2.2.0: {}
+
+  minimatch@9.0.4:
+    dependencies:
+      brace-expansion: 2.0.1
 
   node-fetch@2.7.0:
     dependencies:

@@ -8,7 +8,7 @@ WORKDIR /app
 # Install pnpm
 RUN npm install -g pnpm
 
-COPY package*json pnpm-lock.yaml tsconfig.json src ./
+COPY package*json pnpm-lock.yaml .env tsconfig.json src ./
 
 RUN pnpm install --frozen-lockfile && \
     pnpm run build && \

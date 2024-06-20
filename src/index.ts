@@ -1,7 +1,8 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { pb } from "./libs/pocketbase_client";
-import { env } from "hono/adapter";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = new Hono();
 
@@ -10,9 +11,7 @@ app.get("/", (c) => {
 });
 
 app.post("/options", (c) => {
-  const { POCKETBASE_URL } = env<{ POCKETBASE_URL: string }>(c);
-
-  return c.text("Hello Rev!" + POCKETBASE_URL);
+  return c.text("Hello Rev!" + process.env.POCKETBASE_URL);
 });
 
 const port = 3000;
