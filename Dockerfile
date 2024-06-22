@@ -9,7 +9,6 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 COPY package*json pnpm-lock.yaml tsconfig.json src ./
-COPY stack.env .env
 
 RUN pnpm install --frozen-lockfile && \
     pnpm run build && \
