@@ -4,3 +4,5 @@ services:
     build: .
     ports:
       - "9300:3000" # Maps port 8080 on the host to port 3000 in the container
+    env_file:
+      - stack.env
